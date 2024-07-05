@@ -1,0 +1,94 @@
+body{
+  margin: 0;
+box-sizing: border-box;
+}
+
+header{
+  background-color: rgb(10, 22, 67);
+}
+
+.navBar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 5px;
+}
+
+.nav-Branding{
+  text-decoration: none;
+  font-size: 23px;
+  color: white;
+}
+
+.navMenu {
+display: flex;
+justify-content: space-between;
+gap: 60px;
+align-items: center;
+
+}
+
+.navMenu a{
+  text-decoration: none;
+  color: white;
+}
+
+.hamburger{
+display: none;
+cursor: pointer;
+}
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0px;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.3s ease-in-out;
+
+}
+
+@media (max-width: 768px) {
+  .hamburger{
+    display: block;
+  }
+
+  
+  .navMenu{
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    gap: 0;
+    flex-direction: column;
+    background-color: rgb(10, 10, 69);
+    width: 100%;
+    text-align: center;
+    transition: left 0.3s ease-in-out;
+  }
+
+  .navMenu{
+    display: none;
+  }
+
+  .hamburger.active .bar:nth-child(2){
+    opacity: 0;
+  }
+
+   .hamburger.active .bar:nth-child(1){
+   transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+
+  .navMenu a{
+    margin: 16px 0;
+  }
+
+  .navMenu.active{
+    left: 0;
+    display: flex;
+  }
+}
+
